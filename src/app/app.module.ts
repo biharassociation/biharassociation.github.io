@@ -29,6 +29,9 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { AngularFireModule } from '@angular/fire/compat';
 import { environment } from 'src/environments/environment';
 import { AngularFirestoreModule } from '@angular/fire/compat/firestore';
+import { NoopAnimationsModule } from '@angular/platform-browser/animations';
+import {MatTableModule} from '@angular/material/table';
+import { DashboardComponent } from './pages/dashboard/dashboard.component';
 
 @NgModule({
   declarations: [
@@ -48,7 +51,8 @@ import { AngularFirestoreModule } from '@angular/fire/compat/firestore';
     UpcomingEventsComponent,
     PastEventsComponent,
     ContactComponent,
-    DonateComponent
+    DonateComponent,
+    DashboardComponent
   ],
   imports: [
     BrowserModule,
@@ -59,7 +63,9 @@ import { AngularFirestoreModule } from '@angular/fire/compat/firestore';
     HomeModule,
     ReactiveFormsModule,
     AngularFireModule.initializeApp(environment.firebase),
-    AngularFirestoreModule
+    AngularFirestoreModule,
+    NoopAnimationsModule,
+    MatTableModule
 
   ],
   providers: [],

@@ -8,6 +8,8 @@ import { RouterModule } from '@angular/router';
 import { HomeComponent } from './home.component';
 
 import { SectionsModule } from '../sections/sections.module';
+import {MatTableModule} from '@angular/material/table';
+
 
 @NgModule({
     imports: [
@@ -15,7 +17,8 @@ import { SectionsModule } from '../sections/sections.module';
         BrowserModule,
         FormsModule,
         RouterModule,
-        SectionsModule, NgbModule
+        SectionsModule, NgbModule,
+        MatTableModule
     ],
     declarations: [ HomeComponent ],
     exports:[ HomeComponent ],
