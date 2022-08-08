@@ -33,6 +33,11 @@ import { NoopAnimationsModule } from '@angular/platform-browser/animations';
 import {MatTableModule} from '@angular/material/table';
 import { DashboardComponent } from './pages/dashboard/dashboard.component';
 
+import { AngularFireAuthModule } from '@angular/fire/compat/auth';
+import { AngularFireStorageModule } from '@angular/fire/compat/storage';
+import { AngularFireDatabaseModule } from '@angular/fire/compat/database';
+import { AuthService } from './services/auth.service';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -65,10 +70,13 @@ import { DashboardComponent } from './pages/dashboard/dashboard.component';
     AngularFireModule.initializeApp(environment.firebase),
     AngularFirestoreModule,
     NoopAnimationsModule,
-    MatTableModule
+    MatTableModule,
+    AngularFireAuthModule,
+    AngularFireDatabaseModule,
+    AngularFireStorageModule
 
   ],
-  providers: [],
+  providers: [ AuthService ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

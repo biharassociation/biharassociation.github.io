@@ -16,21 +16,21 @@ export class JoinusComponent implements OnInit {
   constructor(private service: JoinUsService) { }
 
   ngOnInit(): void {
-    this.joinUsFormGroup = new FormGroup({
-      "fullName": new FormControl(null, [Validators.required, Validators.minLength(3)]),
-      "email": new FormControl(null, [Validators.required, Validators.email]),
+    // this.joinUsFormGroup = new FormGroup({
+    //   "fullName": new FormControl(null, [Validators.required, Validators.minLength(3)]),
+    //   "email": new FormControl(null, [Validators.required, Validators.email]),
 
-      "phoneNum": new FormControl(null, [Validators.required, Validators.pattern('[- +()0-9]+')])
-    })
-    this.service.getAll().snapshotChanges().pipe(
-      map(changes =>
-        changes.map(c =>
-          ({ id: c.payload.doc.id, ...c.payload.doc.data() })
-        )
-      )
-    ).subscribe(data => {
-      console.log(data);
-    });
+    //   "phoneNum": new FormControl(null, [Validators.required, Validators.pattern('[- +()0-9]+')])
+    // })
+    // this.service.getAll().snapshotChanges().pipe(
+    //   map(changes =>
+    //     changes.map(c =>
+    //       ({ id: c.payload.doc.id, ...c.payload.doc.data() })
+    //     )
+    //   )
+    // ).subscribe(data => {
+    //   console.log(data);
+    // });
   }
 
   submit(){
