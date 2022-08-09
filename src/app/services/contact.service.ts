@@ -31,5 +31,5 @@ export default class JoinUsForm {
   id?: string;
   fullName?: string;
   email?: string;
-  summary?: string;
+  phoneNum?: string;
 }

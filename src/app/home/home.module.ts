@@ -9,6 +9,7 @@ import { HomeComponent } from './home.component';
 
 import { SectionsModule } from '../sections/sections.module';
 import {MatTableModule} from '@angular/material/table';
+import { MatPaginatorModule } from '@angular/material/paginator';
 
 
 @NgModule({
@@ -18,7 +19,8 @@ import {MatTableModule} from '@angular/material/table';
         FormsModule,
         RouterModule,
         SectionsModule, NgbModule,
-        MatTableModule
+        MatTableModule,
+        MatPaginatorModule
     ],
     declarations: [ HomeComponent ],
     exports:[ HomeComponent ],

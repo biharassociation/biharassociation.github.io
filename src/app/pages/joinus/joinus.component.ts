@@ -12,16 +12,16 @@ export class JoinusComponent implements OnInit {
   focus: any;
   focus1: any;
   joinUsFormGroup: FormGroup;
-  fullName = new FormControl('');
+  //fullName = new FormControl('');
   constructor(private service: JoinUsService) { }
 
   ngOnInit(): void {
-    // this.joinUsFormGroup = new FormGroup({
-    //   "fullName": new FormControl(null, [Validators.required, Validators.minLength(3)]),
-    //   "email": new FormControl(null, [Validators.required, Validators.email]),
+    this.joinUsFormGroup = new FormGroup({
+      "fullName": new FormControl(null, [Validators.required, Validators.minLength(3)]),
+      "email": new FormControl(null, [Validators.required, Validators.email]),
 
-    //   "phoneNum": new FormControl(null, [Validators.required, Validators.pattern('[- +()0-9]+')])
-    // })
+      "phoneNum": new FormControl(null, [Validators.required, Validators.pattern('[- +()0-9]+')])
+    })
     // this.service.getAll().snapshotChanges().pipe(
     //   map(changes =>
     //     changes.map(c =>
@@ -40,7 +40,9 @@ export class JoinusComponent implements OnInit {
     //   "phoneNumber": this.joinUsFormGroup.get("phoneNum").value
     // }
     // console.log(this.joinUsFormGroup.value)
+    
     let userInfo = this.joinUsFormGroup.value;
+    console.log(userInfo);
     this.service.create(userInfo)
   }
   

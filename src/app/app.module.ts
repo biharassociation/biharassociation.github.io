@@ -37,6 +37,7 @@ import { AngularFireAuthModule } from '@angular/fire/compat/auth';
 import { AngularFireStorageModule } from '@angular/fire/compat/storage';
 import { AngularFireDatabaseModule } from '@angular/fire/compat/database';
 import { AuthService } from './services/auth.service';
+import {  MatPaginatorModule } from '@angular/material/paginator';
 
 @NgModule({
   declarations: [
@@ -71,6 +72,7 @@ import { AuthService } from './services/auth.service';
     AngularFirestoreModule,
     NoopAnimationsModule,
     MatTableModule,
+    MatPaginatorModule,
     AngularFireAuthModule,
     AngularFireDatabaseModule,
     AngularFireStorageModule
