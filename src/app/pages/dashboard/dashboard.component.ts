@@ -5,6 +5,7 @@ import { AuthService } from 'src/app/services/auth.service';
 import { map } from 'rxjs';
 import { JoinUsService } from 'src/app/services/contact.service';
 import { SignedUpUser } from 'src/app/model/user';
+import { SelectionModel } from '@angular/cdk/collections';
 
 
 @Component({
@@ -16,11 +17,12 @@ export class DashboardComponent implements OnInit {
 
   userdata: SignedUpUser[] = [];
   dataSource: MatTableDataSource<SignedUpUser>;
+  selection: SelectionModel<SignedUpUser>;
   @ViewChild(MatPaginator) paginator: MatPaginator;
 
   constructor(private authService: AuthService, private contactInfo: JoinUsService) { }
   
-  displayedColumns = ['id', 'email', 'fullName', 'phoneNum'];
+  displayedColumns = ['select', 'id', 'email', 'fullName', 'phoneNum'];
 
 
   ngOnInit(): void {
@@ -40,12 +42,29 @@ export class DashboardComponent implements OnInit {
         
         data.forEach(element => this.userdata.push(new SignedUpUser(element.id,element.email,element.fullName,element.phoneNum)));
         this.dataSource = new MatTableDataSource<SignedUpUser>(this.userdata);
+        this.selection = new SelectionModel<SignedUpUser>(true, []);
+
         this.dataSource.paginator = this.paginator;
         console.log("firebase call");
 
         console.log(this.userdata);
 
       });
+
+      
+  }
+
+  isAllSelected() {
+    const numSelected = this.selection.selected.length;
+    const numRows = this.dataSource.data.length;
+    return numSelected === numRows;
+  }
+
+  /** Selects all rows if they are not all selected; otherwise clear selection. */
+  masterToggle() {
+    this.isAllSelected() ?
+        this.selection.clear() :
+        this.dataSource.data.forEach(row => this.selection.select(row));
   }
 
   ngAfterViewInit() {

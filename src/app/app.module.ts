@@ -38,6 +38,7 @@ import { AngularFireStorageModule } from '@angular/fire/compat/storage';
 import { AngularFireDatabaseModule } from '@angular/fire/compat/database';
 import { AuthService } from './services/auth.service';
 import {  MatPaginatorModule } from '@angular/material/paginator';
+import { MatCheckboxModule } from '@angular/material/checkbox';
 
 @NgModule({
   declarations: [
@@ -73,6 +74,7 @@ import {  MatPaginatorModule } from '@angular/material/paginator';
     NoopAnimationsModule,
     MatTableModule,
     MatPaginatorModule,
+    MatCheckboxModule,
     AngularFireAuthModule,
     AngularFireDatabaseModule,
     AngularFireStorageModule
