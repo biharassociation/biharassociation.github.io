@@ -8,6 +8,9 @@ import { RouterModule } from '@angular/router';
 import { HomeComponent } from './home.component';
 
 import { SectionsModule } from '../sections/sections.module';
+import {MatTableModule} from '@angular/material/table';
+import { MatPaginatorModule } from '@angular/material/paginator';
+
 
 @NgModule({
     imports: [
@@ -15,7 +18,9 @@ import { SectionsModule } from '../sections/sections.module';
         BrowserModule,
         FormsModule,
         RouterModule,
-        SectionsModule, NgbModule
+        SectionsModule, NgbModule,
+        MatTableModule,
+        MatPaginatorModule
     ],
     declarations: [ HomeComponent ],
     exports:[ HomeComponent ],

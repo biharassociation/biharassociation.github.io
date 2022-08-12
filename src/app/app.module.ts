@@ -25,6 +25,20 @@ import { UpcomingEventsComponent } from './pages/upcoming-events/upcoming-events
 import { PastEventsComponent } from './pages/past-events/past-events.component';
 import { ContactComponent } from './pages/contact/contact.component';
 import { DonateComponent } from './pages/donate/donate.component';
+import { ReactiveFormsModule } from '@angular/forms';
+import { AngularFireModule } from '@angular/fire/compat';
+import { environment } from 'src/environments/environment';
+import { AngularFirestoreModule } from '@angular/fire/compat/firestore';
+import { NoopAnimationsModule } from '@angular/platform-browser/animations';
+import {MatTableModule} from '@angular/material/table';
+import { DashboardComponent } from './pages/dashboard/dashboard.component';
+
+import { AngularFireAuthModule } from '@angular/fire/compat/auth';
+import { AngularFireStorageModule } from '@angular/fire/compat/storage';
+import { AngularFireDatabaseModule } from '@angular/fire/compat/database';
+import { AuthService } from './services/auth.service';
+import {  MatPaginatorModule } from '@angular/material/paginator';
+import { MatCheckboxModule } from '@angular/material/checkbox';
 
 @NgModule({
   declarations: [
@@ -44,7 +58,8 @@ import { DonateComponent } from './pages/donate/donate.component';
     UpcomingEventsComponent,
     PastEventsComponent,
     ContactComponent,
-    DonateComponent
+    DonateComponent,
+    DashboardComponent
   ],
   imports: [
     BrowserModule,
@@ -52,9 +67,20 @@ import { DonateComponent } from './pages/donate/donate.component';
     FormsModule,
     RouterModule,
     AppRoutingModule,
-    HomeModule
+    HomeModule,
+    ReactiveFormsModule,
+    AngularFireModule.initializeApp(environment.firebase),
+    AngularFirestoreModule,
+    NoopAnimationsModule,
+    MatTableModule,
+    MatPaginatorModule,
+    MatCheckboxModule,
+    AngularFireAuthModule,
+    AngularFireDatabaseModule,
+    AngularFireStorageModule
+
   ],
-  providers: [],
+  providers: [ AuthService ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

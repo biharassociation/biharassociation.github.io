@@ -14,7 +14,7 @@
       <div class="row justify-content-center">
         <div class="col-lg-5">
           <div class="card bg-secondary shadow border-0">
-            <div class="card-header bg-white pb-5">
+            <!-- <div class="card-header bg-white pb-5">
               <div class="text-muted text-center mb-3">
                 <small>Sign in with</small>
               </div>
@@ -32,18 +32,18 @@
                   <span class="btn-inner--text">Google</span>
                 </a>
               </div>
-            </div>
+            </div> -->
             <div class="card-body px-lg-5 py-lg-5">
-              <div class="text-center text-muted mb-4">
+              <!-- <div class="text-center text-muted mb-4">
                 <small>Or sign in with credentials</small>
-              </div>
+              </div> -->
               <form role="form">
                 <div class="form-group mb-3" [ngClass]="{'focused':focus===true}">
                   <div class="input-group input-group-alternative">
                     <div class="input-group-prepend">
                       <span class="input-group-text"><i class="ni ni-email-83"></i></span>
                     </div>
-                    <input class="form-control" placeholder="Email" type="email" (focus)="focus=true" (blur)="focus=false">
+                    <input class="form-control" placeholder="Email" type="email" (focus)="focus=true" (blur)="focus=false" #email>
                   </div>
                 </div>
                 <div class="form-group" [ngClass]="{'focused':focus1===true}">
@@ -51,7 +51,7 @@
                     <div class="input-group-prepend">
                       <span class="input-group-text"><i class="ni ni-lock-circle-open"></i></span>
                     </div>
-                    <input class="form-control" placeholder="Password" type="password" (focus)="focus1=true" (blur)="focus1=false">
+                    <input class="form-control" placeholder="Password" type="password" (focus)="focus1=true" (blur)="focus1=false" #password>
                   </div>
                 </div>
                 <div class="custom-control custom-control-alternative custom-checkbox">
@@ -61,7 +61,7 @@
                   </label>
                 </div>
                 <div class="text-center">
-                  <button type="button" class="btn btn-primary my-4">Sign in</button>
+                  <button type="button" class="btn btn-primary my-4" (click)="login(email.value, password.value)">Sign in</button>
                 </div>
               </form>
             </div>

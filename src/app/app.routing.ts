@@ -18,6 +18,8 @@ import { UpcomingEventsComponent } from './pages/upcoming-events/upcoming-events
 import { PastEventsComponent } from './pages/past-events/past-events.component';
 import { DonateComponent } from './pages/donate/donate.component';
 import { ContactComponent } from './pages/contact/contact.component';
+import { DashboardComponent } from './pages/dashboard/dashboard.component';
+import { AuthGuard } from './guard/auth.guard';
 
 const routes: Routes =[
     { path: 'home',             component: HomeComponent },
@@ -35,6 +37,7 @@ const routes: Routes =[
     { path: 'pastEvents',          component: PastEventsComponent },
     { path: 'donate',          component: DonateComponent },
     { path: 'contact',          component: ContactComponent },
+    { path: 'dashboard',          component: DashboardComponent, canActivate: [AuthGuard] },
     { path: '', redirectTo: 'home', pathMatch: 'full' }
 ];
 
