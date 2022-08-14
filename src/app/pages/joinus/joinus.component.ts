@@ -45,10 +45,12 @@ export class JoinusComponent implements OnInit {
     //   "phoneNumber": this.joinUsFormGroup.get("phoneNum").value
     // }
     // console.log(this.joinUsFormGroup.value)
-    
     let userInfo = this.joinUsFormGroup.value;
     console.log(userInfo);
     this.service.create(userInfo)
+    alert("The form has been submitted!!")
+    this.joinUsFormGroup.reset();
+
   }
   
   }
