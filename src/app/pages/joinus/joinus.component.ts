@@ -20,7 +20,12 @@ export class JoinusComponent implements OnInit {
       "fullName": new FormControl(null, [Validators.required, Validators.minLength(3)]),
       "email": new FormControl(null, [Validators.required, Validators.email]),
 
-      "phoneNum": new FormControl(null, [Validators.required, Validators.pattern('[- +()0-9]+')])
+      "phoneNum": new FormControl(null, [Validators.required, Validators.pattern('[- +()0-9]+')]),
+      "address" : new FormControl(null, [Validators.required]),
+      "city" : new FormControl(null, [Validators.required]),
+      "zipcode" : new FormControl(null, [Validators.required]),
+      "state" : new FormControl(null, [Validators.required]),
+      "hometown" : new FormControl(null, [Validators.required])
     })
     // this.service.getAll().snapshotChanges().pipe(
     //   map(changes =>
