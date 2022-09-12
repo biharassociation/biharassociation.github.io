@@ -63,14 +63,14 @@
           </div>
         </li>
         <li class="nav-item dropdown">
-          <a class="nav-link no-caret" [routerLink]="['/activities']" data-toggle="dropdown" role="button">
+          <a class="nav-link no-caret" [routerLink]="['/upcomingEvents']" data-toggle="dropdown" role="button">
             <i class="ni ni-collection d-lg-none"></i>
             <span class="nav-link-inner--text">Activities and Events</span>
           </a>
           <div class="dropdown-menu">
-            <a [routerLink]="['/activities']" class="dropdown-item">Activities</a>
             <a [routerLink]="['/upcomingEvents']" class="dropdown-item">Upcoming Events</a>
             <a [routerLink]="['/pastEvents']" class="dropdown-item">Past Events</a>
+            <a [routerLink]="['/activities']" class="dropdown-item">Activities</a>
           </div>
         </li>
 
@@ -92,6 +92,14 @@
           <a [routerLink]="['contact']" class="nav-link no-caret" data-toggle="dropdown" role="button">
             <i class="ni ni-collection d-lg-none"></i>
             <span class="nav-link-inner--text">Contact</span>
+          </a>
+        </li>
+        <li class="nav-item dropdown">
+          <a [routerLink]="['joinus']" class="btn btn-neutral btn-icon">
+            <span class="btn-inner--icon">
+              <i class="fa fa-cloud-download mr-2"></i>
+            </span>
+            <span class="nav-link-inner--text">Join Us</span>
           </a>
         </li>
       </ul>
@@ -122,14 +130,7 @@
         </li>
       </ul>-->
 
-      <li class="nav-item d-none d-lg-block ml-lg-4">
-        <a [routerLink]="['joinus']" class="btn btn-neutral btn-icon">
-          <span class="btn-inner--icon">
-            <i class="fa fa-cloud-download mr-2"></i>
-          </span>
-          <span class="nav-link-inner--text">Join Us</span>
-        </a>
-      </li>
+   
 
     </div>
   </div>

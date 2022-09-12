@@ -22,7 +22,7 @@ export class DashboardComponent implements OnInit {
 
   constructor(private authService: AuthService, private contactInfo: JoinUsService) { }
   
-  displayedColumns = ['select', 'id', 'email', 'fullName', 'phoneNum'];
+  displayedColumns = ['select', 'fullName', 'email', 'phoneNum', 'address', 'city', 'state', 'zipcode', 'hometown'];
 
 
   ngOnInit(): void {
@@ -40,7 +40,7 @@ export class DashboardComponent implements OnInit {
       ).subscribe(data => {
         
         
-        data.forEach(element => this.userdata.push(new SignedUpUser(element.id,element.email,element.fullName,element.phoneNum)));
+        data.forEach(element => this.userdata.push(new SignedUpUser(element.fullName,element.email,element.phoneNum,element.address,element.city,element.state,element.zipcode,element.hometown)));
         this.dataSource = new MatTableDataSource<SignedUpUser>(this.userdata);
         this.selection = new SelectionModel<SignedUpUser>(true, []);
 

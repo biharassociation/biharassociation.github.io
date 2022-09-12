@@ -1,0 +1,11 @@
+.link{
+    font-weight: bold; 
+    color: rgb(255, 186, 186);
+     text-decoration: underline;
+}
+
+.link:hover {
+    color: rgb(249, 119, 119);
+
+    
+}

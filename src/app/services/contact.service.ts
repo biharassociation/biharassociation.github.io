@@ -28,8 +28,12 @@ export class JoinUsService {
 
 
 export default class JoinUsForm {
-  id?: string;
   fullName?: string;
   email?: string;
   phoneNum?: string;
+  address?: string;
+  city?: string;
+  state?: string;
+  zipcode?: number;
+  hometown?: string;
 }
