@@ -39,6 +39,7 @@ import { AngularFireDatabaseModule } from '@angular/fire/compat/database';
 import { AuthService } from './services/auth.service';
 import {  MatPaginatorModule } from '@angular/material/paginator';
 import { MatCheckboxModule } from '@angular/material/checkbox';
+import { MissionComponent } from './pages/mission/mission.component';
 
 @NgModule({
   declarations: [
@@ -59,7 +60,8 @@ import { MatCheckboxModule } from '@angular/material/checkbox';
     PastEventsComponent,
     ContactComponent,
     DonateComponent,
-    DashboardComponent
+    DashboardComponent,
+    MissionComponent
   ],
   imports: [
     BrowserModule,
