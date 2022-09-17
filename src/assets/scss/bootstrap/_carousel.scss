@@ -28,7 +28,7 @@
   width: 100%;
   backface-visibility: hidden;
   perspective: 1000px;
-  height: 500px;
+  min-height: 200px;
 }
 
 .carousel-item.active,
@@ -243,6 +243,9 @@
   color: $carousel-caption-color;
   text-align: center;
 }
+/*
+Height Issue
 .bootstrap-slider{
   height: 500px;
 }
+*/
