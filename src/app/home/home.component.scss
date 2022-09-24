@@ -1,3 +1,10 @@
+.projects{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    margin-top: -70px;
+}
+
 .home_btns{
     display: flex;
     align-items: center;
