@@ -19,7 +19,7 @@ export class JoinusComponent implements OnInit {
     this.joinUsFormGroup = new FormGroup({
       "fullName": new FormControl(null, [Validators.required, Validators.minLength(3)]),
       "email": new FormControl(null, [Validators.required, Validators.email]),
-      "phoneNum": new FormControl(null, [Validators.required, Validators.pattern('[- +()0-9]+'), Validators.minLength(10)]),
+      "phoneNum": new FormControl(null, [Validators.required, Validators.minLength(10), Validators.maxLength(12)]),
       "address" : new FormControl(null, [Validators.required]),
       "city" : new FormControl(null, [Validators.required]),
       "zipcode" : new FormControl(null, [Validators.required]),
@@ -36,6 +36,7 @@ export class JoinusComponent implements OnInit {
     //   console.log(data);
     // });
   }
+  
 
   submit(){
     // let userData = {
@@ -48,10 +49,10 @@ export class JoinusComponent implements OnInit {
       let userInfo = this.joinUsFormGroup.value;
       console.log(userInfo);
       this.service.create(userInfo)
-      alert("The form has been submitted!!")
+      alert("The form has been submitted!")
       this.joinUsFormGroup.reset();
     } else {
-      alert("Form is not valid")
+      alert("Form is not complete.")
     }
     
 
