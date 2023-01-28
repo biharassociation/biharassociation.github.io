@@ -30,10 +30,8 @@
                               </div>
                               <input formControlName="fullName" class="form-control" placeholder="Full name" type="text" (focus)="focus=true" (blur)="focus=false" required>
                             </div>
-                            <div *ngIf="joinUsFormGroup.controls['fullName'].invalid && (joinUsFormGroup.controls['fullName'].dirty || joinUsFormGroup.controls['fullName'].touched)" class="alert alert-danger">
-                              <div *ngIf="joinUsFormGroup.controls['fullName'].errors.required">
+                            <div *ngIf="joinUsFormGroup.controls['fullName'].invalid && (joinUsFormGroup.controls['fullName'].dirty && joinUsFormGroup.controls['fullName'].touched)" class="alert alert-danger">
                               Name is required.
-                            </div>
                             </div>
                           </div>
 
@@ -44,10 +42,8 @@
                               </div>
                               <input formControlName="email" class="form-control" placeholder="Email address" type="email" (focus)="focus1=true" (blur)="focus1=false" required>
                             </div>
-                            <div *ngIf="joinUsFormGroup.controls['email'].invalid && (joinUsFormGroup.controls['email'].dirty || joinUsFormGroup.controls['email'].touched)" class="alert alert-danger">
-                              <div *ngIf="joinUsFormGroup.controls['email'].errors.required">
+                            <div *ngIf="(joinUsFormGroup.controls['email'].invalid && (joinUsFormGroup.controls['email'].dirty && joinUsFormGroup.controls['email'].touched))" class="alert alert-danger">
                                 Email is required.
-                              </div>
                             </div>
                           </div>
 
@@ -56,12 +52,22 @@
                               <div class="input-group-prepend">
                                 <span class="input-group-text"><i class="ni ni-mobile-button"></i></span>
                               </div>
-                              <input formControlName="phoneNum" class="form-control form-control-alternative" name="phoneNumber" placeholder="Phone Number" required>
+                              <input formControlName="phoneNum" class="form-control form-control-alternative" name="phoneNumber" placeholder="Phone Number" type="tel" maxLength="12" id="phone"
+                              oninput="javascript: 
+                              if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength); 
+                              
+                              var phone = document.querySelector('#phone');
+
+                              phone.addEventListener('keyup', function(e){
+                                if (event.key != 'Backspace' && (phone.value.length === 3 || phone.value.length === 7)){
+                                    phone.value += '-';
+                                }
+                              });" 
+                              
+                              required>
                             </div>
-                            <div *ngIf="joinUsFormGroup.controls['phoneNum'].invalid && (joinUsFormGroup.controls['phoneNum'].dirty || joinUsFormGroup.controls['phoneNum'].touched)" class="alert alert-danger">
-                              <div *ngIf="joinUsFormGroup.controls['phoneNum'].errors.required">
+                            <div *ngIf="joinUsFormGroup.controls['phoneNum'].invalid && (joinUsFormGroup.controls['phoneNum'].dirty && joinUsFormGroup.controls['phoneNum'].touched)" class="alert alert-danger">
                                 Phone Number is required.
-                              </div>
                             </div>
                           </div>
 
