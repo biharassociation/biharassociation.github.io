@@ -43,12 +43,26 @@
     margin-top: 0px;
 }
 
+.event_info{
+    height: 110px;
+    max-width: 500px;
+    display: -webkit-box;
+    -webkit-line-clamp: 4;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
 @media only screen and (max-width: 500px){
     .home_btns{
         flex-direction: column;
     }
     .home_btns a{
         width: 100%;
+    }
+
+    .projects{
+        align-items: center;
+        text-align: center;
     }
 
     .upcoming_events{

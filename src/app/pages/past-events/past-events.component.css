@@ -20,3 +20,27 @@
 .past_events span {
     margin-top: 0px;
 }
+
+@media only screen and (max-width: 500px){
+    .past_events img {
+        width: 350px;
+        height: auto;
+        margin-left: 24px;
+    }
+    .past_events{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .past_events span {
+        margin: 10px 20px 25px 40px;
+    }
+
+    .past_events_box{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-top: 50px;
+    }
+}

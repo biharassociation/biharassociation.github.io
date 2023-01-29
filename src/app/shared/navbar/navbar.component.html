@@ -26,56 +26,24 @@
       </div>
       <ul class="navbar-nav navbar-nav-hover align-items-lg-center">
         <li class="nav-item dropdown">
-          <a class="nav-link no-caret" [routerLink]="['about']"  data-toggle="dropdown" role="button" >
+          <a class="nav-link no-caret dropbtn" data-toggle="dropdown" role="button" (click)="showAbout()">
             <i class="ni ni-ui-04 d-lg-none"></i>
             <span  class="nav-link-inner--text">About O2B2</span>
           </a>
-          <div class="dropdown-menu-xl dropdown-menu" >
-            <div class="dropdown-menu-inner">
-              <a routerLinkActive="active" [routerLink]="['about']" class="media d-flex align-items-center">
-                <div class="icon icon-shape bg-gradient-primary rounded-circle text-white">
-                  <i class="ni ni-archive-2"></i>
-                </div>
-                <div class="media-body ml-3">
-                  <h6 class="heading text-primary mb-md-1">About O2B2</h6>
-                </div>
-              </a>
-              <a routerLinkActive="active" [routerLink]="['mission']" class="media d-flex align-items-center">
-                <div class="icon icon-shape bg-gradient-primary rounded-circle text-white">
-                  <i class="ni ni-spaceship"></i>
-                </div>
-                <div class="media-body ml-3">
-                  <h6 class="heading text-primary mb-md-1">Mission Statement</h6>
-                  <p class="description d-none d-md-inline-block mb-0">Vision & Mission of O2B2</p>
-                </div>
-              </a>
-              <a routerLinkActive="active" [routerLink]="['team']" class="media d-flex align-items-center">
-                <div class="icon icon-shape bg-gradient-success rounded-circle text-white">
-                  <i class="ni ni-palette"></i>
-                </div>
-                <div class="media-body ml-3">
-                  <h6 class="heading text-primary mb-md-1">Executive Committee</h6>
-                  <p class="description d-none d-md-inline-block mb-0">Meet the team</p>
-                </div>
-              </a>
-              <a routerLinkActive="active" [routerLink]="['chapters']" class="media d-flex align-items-center">
-                <div class="icon icon-shape bg-gradient-warning rounded-circle text-white">
-                  <i class="ni ni-ui-04"></i>
-                </div>
-                <div class="media-body ml-3">
-                  <h5 class="heading text-warning mb-md-1">O2B2 Chapters</h5>
-                  <p class="description d-none d-md-inline-block mb-0">View our previous events</p>
-                </div>
-              </a>
-            </div>
+          <div class="dropdown-menu dropdown-content" id="dropdown_about">
+            <a [routerLink]="['about']" class="dropdown-item"> About O2B2 </a>
+            <a [routerLink]="['mission']" class="dropdown-item"> Mission Statement</a>
+            <a [routerLink]="['team']" class="dropdown-item"> Executive Committee</a>
+            <a [routerLink]="['chapters']" class="dropdown-item"> O2B2 Chapters</a>
           </div>
         </li>
-        <li class="nav-item dropdown">
-          <a class="nav-link no-caret" [routerLink]="['/upcomingEvents']" data-toggle="dropdown" role="button">
+        <li class="nav-item dropdown" (click)="showEvents()">
+          <!-- [routerLink]="['/upcomingEvents']" -->
+          <a class="nav-link no-caret dropbtn2" data-toggle="dropdown" role="button" >
             <i class="ni ni-collection d-lg-none"></i>
             <span class="nav-link-inner--text">Events and Projects</span>
           </a>
-          <div class="dropdown-menu">
+          <div class="dropdown-menu dropdown-content" id="dropdown_events">
             <a [routerLink]="['/upcomingEvents']" class="dropdown-item">Upcoming Events</a>
             <a [routerLink]="['/pastEvents']" class="dropdown-item">Past Events</a>
             <a [routerLink]="['/activities']" class="dropdown-item">Projects</a>
@@ -83,21 +51,21 @@
         </li>
 
         <li class="nav-item dropdown">
-          <a class="nav-link no-caret" data-toggle="dropdown" [routerLink]="['gallery']" role="button">
+          <a class="nav-link no-caret dropbtn" data-toggle="dropdown" [routerLink]="['gallery']" role="button">
             <i class="ni ni-collection d-lg-none"></i>
             <span class="nav-link-inner--text">Gallery</span>
           </a>
         </li>
 
         <li class="nav-item dropdown">
-          <a [routerLink]="['donate']"class="nav-link no-caret" data-toggle="dropdown" role="button">
+          <a [routerLink]="['donate']"class="nav-link no-caret dropbtn" data-toggle="dropdown" role="button">
             <i class="ni ni-collection d-lg-none"></i>
             <span class="nav-link-inner--text">Donate</span>
           </a>
         </li>
 
         <li class="nav-item dropdown">
-          <a [routerLink]="['contact']" class="nav-link no-caret" data-toggle="dropdown" role="button">
+          <a [routerLink]="['contact']" class="nav-link no-caret dropbtn" data-toggle="dropdown" role="button">
             <i class="ni ni-collection d-lg-none"></i>
             <span class="nav-link-inner--text">Contact</span>
           </a>
@@ -111,7 +79,10 @@
           </a>
         </li>
       </ul>
-      <!-- <ul class="navbar-nav align-items-lg-center ml-lg-auto"> 
+
+   
+
+         <!-- <ul class="navbar-nav align-items-lg-center ml-lg-auto"> 
         <li class="nav-item">
           <a class="nav-link nav-link-icon" href="https://www.facebook.com/creativetim" target="_blank" data-toggle="tooltip" title="Like us on Facebook">
             <i class="fa fa-facebook-square"></i>
@@ -137,8 +108,6 @@
           </a>
         </li>
       </ul>-->
-
-   
 
     </div>
   </div>

@@ -53,4 +53,13 @@ export class NavbarComponent implements OnInit {
             return false;
         }
     }
+
+    showEvents(){
+        document.getElementById("dropdown_events").classList.toggle("show");
+    }
+
+    showAbout(){
+        document.getElementById("dropdown_about").classList.toggle("show");
+    }
+
 }

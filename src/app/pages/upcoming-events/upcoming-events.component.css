@@ -48,4 +48,9 @@
     .upcoming_events span {
         padding: 20px;
     }
+
+
+    .container{
+        margin-top: 50px;
+    }
 }
