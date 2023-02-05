@@ -1,3 +1,16 @@
+a, p{
+    font-size: 20px;
+    font-weight: 400;
+    margin-bottom: 5px;
+    color: white;
+}
+
+.contact_info i, .ni{
+    margin-right: 10px;
+
+}
+
+
 @media only screen and (max-width: 500px){
     .container{
         margin-top: 50px;

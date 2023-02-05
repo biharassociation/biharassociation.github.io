@@ -25,9 +25,9 @@
 }
 
 .upcoming_events img{
-    border-radius: 20px;
+    /* border-radius: 20px; */
     border: 1px solid white;
-    height: 200px;
+    height: auto;
     width: 300px;
     object-fit: cover;
 
