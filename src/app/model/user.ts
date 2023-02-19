@@ -1,4 +1,6 @@
 import { zip } from "rxjs";
+import { AngularFireDatabase } from "@angular/fire/compat/database";
+import * as firebase from 'firebase/app';
 
 export interface User {
     uid: string;
@@ -28,5 +30,6 @@ export interface User {
         this.state = state;
         this.zipcode = zipcode;
         this.hometown = hometown;
+    
       }
  }

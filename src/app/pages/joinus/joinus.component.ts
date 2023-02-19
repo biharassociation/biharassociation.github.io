@@ -1,19 +1,23 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit} from '@angular/core';
 import {FormGroup,FormControl,Validators} from '@angular/forms';
 import { map } from 'rxjs';
+import { DatePipe } from '@angular/common';
 import {JoinUsService} from '../../services/contact.service'
 
 @Component({
   selector: 'app-joinus',
   templateUrl: './joinus.component.html',
-  styleUrls: ['./joinus.component.css']
+  styleUrls: ['./joinus.component.css'],
+  providers: [DatePipe]
 })
+
 export class JoinusComponent implements OnInit {
   focus: any;
   focus1: any;
   joinUsFormGroup: FormGroup;
-  //fullName = new FormControl('');
-  constructor(private service: JoinUsService) { }
+  currDate: DatePipe;
+
+  constructor(private service: JoinUsService, private datePipe: DatePipe) {}
 
   ngOnInit(): void {
     this.joinUsFormGroup = new FormGroup({
@@ -26,6 +30,7 @@ export class JoinusComponent implements OnInit {
       "state" : new FormControl(null, [Validators.required]),
       "hometown" : new FormControl(null, [Validators.required])
     })
+
     // this.service.getAll().snapshotChanges().pipe(
     //   map(changes =>
     //     changes.map(c =>
@@ -46,8 +51,9 @@ export class JoinusComponent implements OnInit {
     // }
     // console.log(this.joinUsFormGroup.value)
     if (this.joinUsFormGroup.valid) {
-      let userInfo = this.joinUsFormGroup.value;
-      console.log(userInfo);
+      let currDate = this.datePipe.transform( (new Date()), 'MM-dd-yyyy');
+      let userInfo = {"userInfo" : this.joinUsFormGroup.value, "Date" : currDate};
+      // console.log(userInfo);
       this.service.create(userInfo)
       alert("The form has been submitted!")
       this.joinUsFormGroup.reset();
