@@ -15,8 +15,8 @@ export class JoinUsService {
   getAll(): AngularFirestoreCollection<JoinUsForm> {
     return this.tutorialsRef;
   }
-  create(tutorial: JoinUsForm): any {
-    return this.tutorialsRef.add({ ...tutorial });
+  create(tutorial: any): any {
+    return this.tutorialsRef.add({ ...tutorial});
   }
   update(id: string, data: any): Promise<void> {
     return this.tutorialsRef.doc(id).update(data);
