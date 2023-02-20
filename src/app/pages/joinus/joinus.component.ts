@@ -52,7 +52,7 @@ export class JoinusComponent implements OnInit {
     // console.log(this.joinUsFormGroup.value)
     if (this.joinUsFormGroup.valid) {
       let currDate = this.datePipe.transform( (new Date()), 'MM-dd-yyyy');
-      let userInfo = {"userInfo" : this.joinUsFormGroup.value, "Date" : currDate};
+      let userInfo = {"userInfo" : this.joinUsFormGroup.value, "Date Created" : currDate};
       // console.log(userInfo);
       this.service.create(userInfo)
       alert("The form has been submitted!")
