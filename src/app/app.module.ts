@@ -40,6 +40,7 @@ import { AuthService } from './services/auth.service';
 import {  MatPaginatorModule } from '@angular/material/paginator';
 import { MatCheckboxModule } from '@angular/material/checkbox';
 import { MissionComponent } from './pages/mission/mission.component';
+import { EventScheduleComponent } from './pages/event-schedule/event-schedule.component';
 
 @NgModule({
   declarations: [
@@ -61,7 +62,8 @@ import { MissionComponent } from './pages/mission/mission.component';
     ContactComponent,
     DonateComponent,
     DashboardComponent,
-    MissionComponent
+    MissionComponent,
+    EventScheduleComponent
   ],
   imports: [
     BrowserModule,
