@@ -22,6 +22,7 @@ import { ContactComponent } from './pages/contact/contact.component';
 import { DashboardComponent } from './pages/dashboard/dashboard.component';
 import { AuthGuard } from './guard/auth.guard';
 import { MissionComponent } from './pages/mission/mission.component';
+import { PastEventsBdComponent } from './pages/past-events-bd/past-events-bd.component';
 
 const routes: Routes =[
     { path: 'home',             component: HomeComponent },
@@ -41,6 +42,7 @@ const routes: Routes =[
     { path: 'donate',          component: DonateComponent },
     { path: 'contact',          component: ContactComponent },
     { path: 'mission',      component: MissionComponent},
+    { path: 'past-events-bd',          component: PastEventsBdComponent},
     { path: 'dashboard',          component: DashboardComponent, canActivate: [AuthGuard] },
     { path: '', redirectTo: 'home', pathMatch: 'full' }
 ];
