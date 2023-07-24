@@ -41,6 +41,7 @@ import {  MatPaginatorModule } from '@angular/material/paginator';
 import { MatCheckboxModule } from '@angular/material/checkbox';
 import { MissionComponent } from './pages/mission/mission.component';
 import { EventScheduleComponent } from './pages/event-schedule/event-schedule.component';
+import { PastEventsBdComponent } from './pages/past-events-bd/past-events-bd.component';
 
 @NgModule({
   declarations: [
@@ -63,7 +64,8 @@ import { EventScheduleComponent } from './pages/event-schedule/event-schedule.co
     DonateComponent,
     DashboardComponent,
     MissionComponent,
-    EventScheduleComponent
+    EventScheduleComponent,
+    PastEventsBdComponent
   ],
   imports: [
     BrowserModule,
