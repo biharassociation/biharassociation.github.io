@@ -16,19 +16,20 @@
 
 .upcoming_events_box{
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     gap: 30px;
 }
 
 .upcoming_events{
     display: flex;
+    flex-direction: column;
 }
 
 .upcoming_events img{
     /* border-radius: 20px; */
     border: 1px solid white;
-    height: auto;
-    width: 300px;
+    height: 500px;
+    width: auto;
     object-fit: cover;
 
 }
@@ -52,5 +53,14 @@
 
     .container{
         margin-top: 50px;
+    }
+
+    .upcoming_events img{
+        /* border-radius: 20px; */
+        border: 1px solid white;
+        height: auto;
+        width: 350px;
+        object-fit: cover;
+    
     }
 }
